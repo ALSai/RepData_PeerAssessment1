@@ -97,7 +97,7 @@ abline(v=stepsWithoutNAMedian, col="red")
 legend('topright', c('Mean', 'Median'), col=c('blue', 'red'), lwd=1)
 ```
 
-The mean and the median of this newly generated dataset are respectively : `r stepsWithoutNAMean` and `r stepsWithoutNAMedian`. They are the same than the original data. In fact, Complete days are missing in the original data. So the total number of steps taken per day is not affect.
+The mean and the median of this newly generated dataset are respectively : `r format(stepsWithoutNAMean)` and `r format(stepsWithoutNAMedian)`. The mean hasn't change. The median value would now move closer to the mean. It makes sense : complete days were missing in the original data, so the total number of steps taken per day is not affect.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

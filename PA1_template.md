@@ -22,7 +22,7 @@ total <- aggregate(steps ~ date, data, sum)
 hist(total$steps, main="Histogram of the total number of steps taken per day", xlab="Total number of steps")
 ```
 
-![plot of chunk totalHistogram](figure/totalHistogram.png) 
+![](PA1_template_files/figure-html/totalHistogram-1.png) 
 
 We calculate the mean of the total number of steps taken per day.
 
@@ -33,7 +33,7 @@ stepsMean
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 We calculate the median of the total number of steps taken per day.
@@ -58,7 +58,7 @@ abline(v=stepsMedian, col="red")
 legend('topright', c('Mean', 'Median'), col=c('blue', 'red'), lwd=1)
 ```
 
-![plot of chunk totalHistogramWithMeanAndMedian](figure/totalHistogramWithMeanAndMedian.png) 
+![](PA1_template_files/figure-html/totalHistogramWithMeanAndMedian-1.png) 
 
 
 ## What is the average daily activity pattern?
@@ -71,7 +71,7 @@ average <- aggregate(steps ~ interval, data, mean)
 plot(type='l', average$interval, average$steps, main="Average number of steps taken per 5-minute interval", xlab="5-minute interval", ylab="Average number of steps taken")
 ```
 
-![plot of chunk averageHist](figure/averageHist.png) 
+![](PA1_template_files/figure-html/averageHist-1.png) 
 
 We calculate the 5-minute interval which contains the maximum number of steps.
 
@@ -124,9 +124,9 @@ abline(v=stepsWithoutNAMedian, col="red")
 legend('topright', c('Mean', 'Median'), col=c('blue', 'red'), lwd=1)
 ```
 
-![plot of chunk dataWithoutNAHist](figure/dataWithoutNAHist.png) 
+![](PA1_template_files/figure-html/dataWithoutNAHist-1.png) 
 
-The mean and the median of this newly generated dataset are respectively : 1.0766 &times; 10<sup>4</sup> and 1.0766 &times; 10<sup>4</sup>. They are the same than the original data. In fact, Complete days are missing in the original data. So the total number of steps taken per day is not affect.
+The mean and the median of this newly generated dataset are respectively : 10766.19 and 10766.19. The mean hasn't change. The median value would now move closer to the mean. It makes sense : complete days were missing in the original data, so the total number of steps taken per day is not affect.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -148,4 +148,4 @@ average <- aggregate(steps ~ interval + daytype, dataWithoutNA, mean)
 xyplot(steps ~ interval | daytype, data=average, type="l", xlab="Interval", ylab="Number of steps", layout=c(1,2))
 ```
 
-![plot of chunk weekDaysGraph](figure/weekDaysGraph.png) 
+![](PA1_template_files/figure-html/weekDaysGraph-1.png) 
